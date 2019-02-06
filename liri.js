@@ -13,6 +13,8 @@ var spotify = new Spotify(keys.spotify)
 var omdb = (keys.omdb)
 var fs = require("fs")
 
+
+
 for (var i = 3; i < process.argv.length; i++) {
     if (i >= 4) {
         userQuery += (" " + process.argv[i].toLowerCase())

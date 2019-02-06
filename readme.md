@@ -1,31 +1,34 @@
-#Liri-node-app
+#Liri-node-app#
 
 What does it do?
+
+<img src="./Assets/Images/spotify-this-song.gif" />
 
 It can do whatever you want, as long as you want to search for a song, movie, find a band on tour, or pull simple commands from a text file.
 
 This project incorporates several NPM packages including:
-    1) node-spotify-api,
-    2) Omdb,
-    3) dotenv,
-    4) moment,
-    5) axios,
-    6) cli-tables, and
-    7) fs,
+    **1)** node-spotify-api,<br>
+    **2)** Omdb, <br>
+    **3)** dotenv,<br>
+    **4)** moment,<br>
+    **5)** axios,<br>
+    **6)** cli-tables, and<br>
+    **7)** fs,<br>
 
 ##How to use it:
 
 ###To find a song on spotify:
-    On the command line:
-        node liri.js spotify-this-song 
-            followed by your song of choice.
-            This will create a table with the Artist's Name, Song Name, Album Name, and a preview URL link.
+    On the command line: <br>
+        node liri.js spotify-this-song <br>
+            followed by your song of choice. <br>
+            This will create a table with the Artist's Name, Song Name, Album Name, and a preview URL link.<br>
+     
 
 ###To find a movie on omdb:
-    On the command line:
-        node liri.js movie-this
-            followed by your movie of choice.
-            this will create a table with the movie title, year the movie was made, the IMDB rating, the Country the movie was produced in, the Lnaguages the movie can be heard in, the basic plot of the movie, and the actors in the movie.
+    On the command line: <br>
+        node liri.js movie-this <br>
+            followed by your movie of choice.<br>
+            this will create a table with the movie title, year the movie was made, the IMDB rating, the Country the movie was produced in, the Lnaguages the movie can be heard in, the basic plot of the movie, and the actors in the movie.<br>
 
 ###To find a band on tour:
     On the command line:
