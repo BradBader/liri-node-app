@@ -13,27 +13,38 @@ var spotify = new Spotify(keys.spotify)
 var omdb = (keys.omdb)
 var fs = require("fs")
 
-
+function appendIt() {
+    fs.appendFile("log.txt", operator + ", " + userQuery + "; \n", function (err) {
+        if (err) {
+            console.log(err)
+        }
+    })
+};
 
 for (var i = 3; i < process.argv.length; i++) {
     if (i >= 4) {
         userQuery += (" " + process.argv[i].toLowerCase())
+
     } else {
         userQuery = (process.argv[i]).toLowerCase()
+
     }
 
 }
 
 switch (operator) {
     case "concert-this":
+        appendIt()
         concert();
         break;
 
     case "spotify-this-song":
         if (process.argv[3] == null) {
             userQuery = ("The Sign Ace of Base")
+            appendIt()
             spotified();
         } else {
+            appendIt()
             spotified();
         }
         break;
@@ -43,14 +54,17 @@ switch (operator) {
             console.log("This liri-app is currently unable to return search results on movies with a rating less than 1/10.")
         } else if (process.argv[3] == null) {
             userQuery = ("Mr. Nobody")
+            appendIt()
             OMDBF()
         } else {
+            appendIt()
             OMDBF()
         }
         break;
 
     case "do-what-it-says":
         console.log("do-what-it-says");
+        appendIt()
         doit()
         break;
 }
