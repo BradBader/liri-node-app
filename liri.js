@@ -7,7 +7,7 @@ var moment = require("moment");
 var axios = require("axios");
 var Table = require("cli-table");
 var spotifyKey = (keys.spotify);
-var userQuery = "";
+var userQuery;
 var operator = process.argv[2]
 var spotify = new Spotify(keys.spotify)
 var omdb = (keys.omdb)
@@ -30,15 +30,23 @@ switch (operator) {
         break;
 
     case "spotify-this-song":
-        spotified();
+        if (process.argv[3] == null) {
+            userQuery = ("The Sign Ace of Base")
+            spotified();
+        } else {
+            spotified();
+        }
         break;
 
     case "movie-this":
         if (userQuery == "contact") {
             console.log("This liri-app is currently unable to return search results on movies with a rating less than 1/10.")
+        } else if (process.argv[3] == null) {
+            userQuery = ("Mr. Nobody")
+            OMDBF()
         } else {
             OMDBF()
-        };
+        }
         break;
 
     case "do-what-it-says":
@@ -55,14 +63,14 @@ function OMDBF() {
             })
             table.push(
 
-                {"Title": thisMovie.Title},
-                {"Year Produced": thisMovie.Year},
-                {"imdb Rating": thisMovie.imdbRating},
-                {"Rotten Tomatoes Rating: ": thisMovie.Ratings[1].Value},
-                {"Country": thisMovie.Country},
-                {"Language": thisMovie.Language},
-                {"Plot": thisMovie.Plot},
-                {"Actors": thisMovie.Actors},
+                { "Title": thisMovie.Title },
+                { "Year Produced": thisMovie.Year },
+                { "imdb Rating": thisMovie.imdbRating },
+                { "Rotten Tomatoes Rating: ": thisMovie.Ratings[1].Value },
+                { "Country": thisMovie.Country },
+                { "Language": thisMovie.Language },
+                { "Plot": thisMovie.Plot },
+                { "Actors": thisMovie.Actors },
             )
             console.log(table.toString())
         }

@@ -1,4 +1,4 @@
-#Liri-node-app#
+# Liri-node-app
 
 What does it do?
 
@@ -15,28 +15,28 @@ This project incorporates several NPM packages including:
     **6)** cli-tables, and<br>
     **7)** fs,<br>
 
-##How to use it:
+## How to use it:
 
-###To find a song on spotify:
+### To find a song on spotify:
     On the command line: <br>
         node liri.js spotify-this-song <br>
             followed by your song of choice. <br>
             This will create a table with the Artist's Name, Song Name, Album Name, and a preview URL link.<br>
      
 
-###To find a movie on omdb:
+### To find a movie on omdb:
     On the command line: <br>
         node liri.js movie-this <br>
             followed by your movie of choice.<br>
             this will create a table with the movie title, year the movie was made, the IMDB rating, the Country the movie was produced in, the Lnaguages the movie can be heard in, the basic plot of the movie, and the actors in the movie.<br>
 
-###To find a band on tour:
+### To find a band on tour:
     On the command line:
         node liri.js concert-this
             followed by your band of choice.
             This will create a table with the venue name, city and country, as well as the date and time of the show.
 
-###To do what the text file says:
+### To do what the text file says:
     On the command line:
         node liri.js do-what-it-says
             This will load values from the text file random.txt and run the corresponding function with preloaded values.
